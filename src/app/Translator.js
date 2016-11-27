@@ -1,4 +1,6 @@
 import React from 'react'
+import MessageEditor from './MessageEditor'
+
 
 class Translator extends React.Component {
   render () {
@@ -35,7 +37,7 @@ class Translator extends React.Component {
               {message[sourceLang]}
             </div>
             <div className="Translator__message --translation">
-              {message[transLang]}
+              <MessageEditor value={message[transLang]} />
             </div>
           </div>
         )}
