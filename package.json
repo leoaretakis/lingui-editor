@@ -1,0 +1,43 @@
+{
+  "name": "lingui-translator",
+  "version": "0.0.0-development",
+  "description": "Browser application for translation of dictionaries in ICU message format.",
+  "keywords": [
+    "icu",
+    "message",
+    "format",
+    "i18n",
+    "internationalization",
+    "i9n",
+    "translation",
+    "i10n",
+    "localization"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Tomáš Ehrlich",
+    "email": "tomas.ehrlich@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lingui/lingui-translator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lingui/lingui-translator/issues"
+  },
+  "homepage": "https://github.com/lingui/lingui-translator#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.2.0",
+    "semantic-release": "^6.3.2"
+  }
+}
