@@ -3,22 +3,17 @@ import Translator from './Translator'
 
 class App extends React.Component {
   state = {
-    messages: [
-      {
-        en: 'Hello World',
-        cs: 'Ahoj Svete'
-      }, {
-        en: 'Hi, my name is {name}',
-        cs: 'Ahoj, jmenuji se {name}'
-      }, {
-        en: 'There {count, plural, zero {are no bottles} one {one bottle} other {# bottles}} hanging on the wall',
-        cs: 'Na stěně {count, plural, zero {nejsou žádné láhve} one {je jedna láhev} few {jsou # láhve} many {je # láhví}}'
-      }
-    ],
+    messages: [],
     languages: {
       source: 'en',
       translation: 'cs'
     }
+  }
+
+  componentWillMount() {
+    fetch('/api/messages/example/')
+    .then((res) => res.json())
+    .then((data) => this.setState({messages: data}))
   }
 
   render () {
