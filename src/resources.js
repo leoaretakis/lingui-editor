@@ -1,8 +1,7 @@
-import fs from "fs"
-import path from "path"
+import fs from 'fs'
+import path from 'path'
 
-
-function groupByLanguage(files) {
+function groupByLanguage (files) {
   const langRe = /(.*)([a-z]{2})\.json/
 
   return (
@@ -19,8 +18,7 @@ function groupByLanguage(files) {
   )
 }
 
-
-function loadResources(pathname) {
+function loadResources (pathname) {
   return new Promise((resolve, reject) => {
     fs.readdir(pathname, (err, files) => {
       if (err) {
@@ -28,13 +26,12 @@ function loadResources(pathname) {
       } else {
         resolve(
           groupByLanguage(
-            files .map((filename) => path.join(pathname, filename))
+            files.map((filename) => path.join(pathname, filename))
           )
         )
       }
     })
   })
 }
-
 
 export { loadResources }

@@ -1,10 +1,10 @@
-import express from "express"
-import { loadResources } from "./resources.js"
+import express from 'express'
+import { loadResources } from './resources.js'
 
 const app = express()
 
 app.get('/api/resources', (req, res) => {
-  loadResources("./example")
+  loadResources('./example')
     .then(JSON.stringify)
     .then((json) => res.send(json))
 })
