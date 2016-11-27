@@ -2,7 +2,8 @@
 import React from 'react'
 
 type MessageEditorProps = {
-  value: string
+  value: string,
+  onSave: Function
 }
 
 type MessageEditorState = {
@@ -17,13 +18,7 @@ class MessageEditor extends React.Component {
     super(props)
 
     this.state = {
-      value: null
-    }
-  }
-
-  handleChange = (e: SyntheticEvent) => {
-    if (e.target instanceof HTMLInputElement) {
-      this.setState({value: e.target.value})
+      value: props.value
     }
   }
 
@@ -33,9 +28,31 @@ class MessageEditor extends React.Component {
 
     return (
         <div className="MessageEditor">
-          <input type="text" value={value} onChange={this.handleChange} />
+          <input
+            type="text"
+            value={value}
+            onChange={this.handleChange}
+            onBlur={this.saveMessage}
+            onKeyPress={this.handleKeyPress}
+          />
         </div>
     )
+  }
+
+  handleChange = (e: SyntheticEvent) => {
+    if (e.target instanceof HTMLInputElement) {
+      this.setState({value: e.target.value})
+    }
+  }
+
+  handleKeyPress = (e: SyntheticKeyboardEvent) => {
+    if (e.key === 'Enter') {
+      this.saveMessage()
+    }
+  }
+
+  saveMessage = () => {
+    this.props.onSave(this.state.value)
   }
 }
 

@@ -10,24 +10,7 @@ class Translator extends React.Component {
         source: sourceLang,
         translation: transLang
       }
-    } = {
-      messages: [
-        {
-          en: 'Hello World',
-          cs: 'Ahoj Svete'
-        }, {
-          en: 'Hi, my name is {name}',
-          cs: 'Ahoj, jmenuji se {name}'
-        }, {
-          en: 'There {count, plural, zero {are no bottles} one {one bottle} other {# bottles}} hanging on the wall',
-          cs: 'Na stěně {count, plural, zero {nejsou žádné láhve} one {je jedna láhev} few {jsou # láhve} many {je # láhví}}'
-        }
-      ],
-      languages: {
-        source: 'en',
-        translation: 'cs'
-      }
-    }
+    } = this.props
 
     return (
       <div className="Translator">
@@ -37,7 +20,10 @@ class Translator extends React.Component {
               {message[sourceLang]}
             </div>
             <div className="Translator__message --translation">
-              <MessageEditor value={message[transLang]} />
+              <MessageEditor
+                value={message[transLang]}
+                onSave={this.props.onSave(message)}
+              />
             </div>
           </div>
         )}
