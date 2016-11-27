@@ -1,7 +1,7 @@
 lingui-translator
 =================
 
-Browser application for translation of dictionaries in ICU message format.
+> Editor for message catalogues
 
 Usage
 -----
