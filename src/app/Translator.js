@@ -14,19 +14,22 @@ class Translator extends React.Component {
 
     return (
       <div className="Translator">
-        {messages.map((message) =>
-          <div className="Translator__message" key={message[sourceLang]}>
-            <div className="Translator__message --source">
-              {message[sourceLang]}
+        {Object.keys(messages).map((key) => {
+          const message = messages[key]
+          return (
+            <div className="Translator__message" key={message[sourceLang]}>
+              <div className="Translator__message --source">
+                {message[sourceLang]}
+              </div>
+              <div className="Translator__message --translation">
+                <MessageEditor
+                  value={message[transLang]}
+                  onSave={this.props.onSave(key)}
+                />
+              </div>
             </div>
-            <div className="Translator__message --translation">
-              <MessageEditor
-                value={message[transLang]}
-                onSave={this.props.onSave(message)}
-              />
-            </div>
-          </div>
-        )}
+          )
+        })}
       </div>
     )
   }

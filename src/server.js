@@ -45,6 +45,7 @@ app.get('/api/messages/:file', (req, res) => {
 
 app.post('/api/messages/:file', (req, res) => {
   saveResource(req.params['file'], req.body)
+    .then((json) => res.json(json))
 })
 
 app.listen(3000, () => {

@@ -27,22 +27,36 @@ class App extends React.Component {
     )
   }
 
-  handleMessageSave = (oldMessage) => (newMessage) => {
-    const {languages: {source: srcLang, translation: transLang}} = this.state
-    const messages = this.state.messages.map((message) => {
-      if (message[srcLang] !== oldMessage[srcLang]) return message
+  handleMessageSave = (key) => (newMessage) => {
+    const {messages, languages: {translation: transLang}} = this.state
 
-      return {
-        ...message,
+    const newMessages = {
+      ...messages,
+      [key]: {
+        ...messages[key],
         [transLang]: newMessage
       }
-    })
+    }
 
-    this.setState({messages})
+    this.setState({messages: newMessages})
   }
 
   handleSave = () => {
-    console.log(this.state.messages)
+    const language = this.state.languages.translation
+    const messages = {}
+
+    Object.keys(this.state.messages).forEach((key) => {
+      messages[key] = this.state.messages[key][language]
+    })
+
+    fetch('/api/messages/example/', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({language, messages})
+    })
   }
 }
 

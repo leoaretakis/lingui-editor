@@ -1,4 +1,5 @@
 import fs from 'fs'
+import os from 'os'
 import path from 'path'
 
 const langRe = /(.*)([a-z]{2})\.json/
@@ -51,14 +52,19 @@ function loadResource (resource) {
       })
     })
 
-    // convert dict to array
-    const arr = Object.keys(catalog).map((key) => catalog[key])
-    resolve(arr)
+    resolve(catalog)
   })
 }
 
 function saveResource (resource, {language, messages}) {
-  console.log()
+  return new Promise((resolve, reject) => {
+    const filename = fs.lstatSync(resource).isDirectory()
+      ? path.join(resource, `${language}.json`)
+      : `${resource}.${language}.json`
+
+    fs.writeFileSync(filename, JSON.stringify(messages, null, 2) + os.EOL)
+    resolve(messages)
+  })
 }
 
 export { loadResources, loadResource, saveResource }
