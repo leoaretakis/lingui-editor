@@ -1,0 +1,5 @@
+{
+  "static": "Hello World",
+  "variable": "Hi, my name is {name}",
+  "plural": "There {count, plural, zero {are no bottles} one {one bottle} other {# bottles}} hanging on the wall"
+}

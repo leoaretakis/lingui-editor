@@ -1,0 +1,5 @@
+{
+  "static": "Ahoj světe!",
+  "variable": "Ahoj, jmenuji se {name}",
+  "plural": "Na stěně {count, plural, zero {nejsou žádné láhve} one {je jedna láhev} few {jsou # láhve} many {je # láhví}}"
+}
