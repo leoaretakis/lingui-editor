@@ -49,5 +49,5 @@ app.post('/api/messages/:file', (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log('lingui-translator running at http://localhost:3000')
+  console.log('lingui-editor running at http://localhost:3000')
 })

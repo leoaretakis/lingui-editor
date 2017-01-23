@@ -1,5 +1,5 @@
 {
-  "name": "lingui-translator",
+  "name": "lingui-editor",
   "version": "0.0.0-development",
   "description": "Editor for message catalogues.",
   "keywords": [
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lingui/lingui-translator.git"
+    "url": "https://github.com/lingui/lingui-editor.git"
   },
   "bugs": {
-    "url": "https://github.com/lingui/lingui-translator/issues"
+    "url": "https://github.com/lingui/lingui-editor/issues"
   },
-  "homepage": "https://github.com/lingui/lingui-translator#readme",
+  "homepage": "https://github.com/lingui/lingui-editor#readme",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -41,29 +41,29 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-loader": "^6.2.8",
-    "babel-plugin-transform-class-properties": "^6.19.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-2": "^6.18.0",
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
     "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^3.11.0",
+    "eslint": "^3.14.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-react": "^6.9.0",
     "eslint-plugin-standard": "^2.0.1",
-    "html-webpack-plugin": "^2.24.1",
+    "html-webpack-plugin": "^2.26.0",
+    "nodemon": "^1.11.0",
     "semantic-release": "^6.3.2",
-    "webpack": "^1.13.3",
-    "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.16.0",
     "express": "^4.14.0",
-    "nodemon": "^1.11.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }

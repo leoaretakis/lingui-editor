@@ -1,4 +1,4 @@
-lingui-translator
+lingui-editor
 =================
 
 > Editor for message catalogues
@@ -6,9 +6,9 @@ lingui-translator
 Usage
 -----
 
-1. Install: `npm install -g lingui-translator`
+1. Install: `npm install -g lingui-editor`
 2. Go to your project directory
-3. Run: `lingui-translator`
+3. Run: `lingui-editor`
 
 License
 -------
